@@ -41,7 +41,7 @@ Mobile App → Bluetooth Module → Arduino → Motor Driver → DC Motors
 
 ---
 
-## 🎮 Control Commands
+## Control Commands
 
 | Command | Action |
 |--------|--------|
