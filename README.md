@@ -1,53 +1,100 @@
 # Bluetooth Controlled Robotic Car Using Arduino
 
 ## Objective
-To design and implement a **Bluetooth-controlled robotic car** using an **Arduino microcontroller**, enabling wireless control of motor movement via a mobile device.
+To design and implement a **Bluetooth-controlled robotic car** using an **Arduino microcontroller**, where motor movements are controlled through **serial commands received via a Bluetooth module**.
 
 ---
 
 ## Components Used
-- Arduino UNO
+- Arduino UNO / Nano
 - Bluetooth Module (HC-05 / HC-06)
-- Motor Driver Module (L298N / L293D)
-- DC Motors
+- Motor Driver Module (L293D / L298N)
+- 2 × DC Motors
 - Robot Chassis
 - Battery / Power Supply
 - Jumper Wires
 
 ---
 
-## Working Principle
-- A mobile phone sends control commands through Bluetooth.
-- The Bluetooth module receives these commands and transfers them to the Arduino via serial communication.
-- Arduino processes the received data and generates appropriate control signals.
-- The motor driver drives the DC motors based on these signals, resulting in forward, backward, left, or right movement of the car.
+## Pin Configuration
+
+### Motor Driver Connections
+| Motor | Arduino Pin |
+|------|-------------|
+| Motor 1 IN1 | 9 |
+| Motor 1 IN2 | 10 |
+| Motor 2 IN1 | 11 |
+| Motor 2 IN2 | 12 |
 
 ---
 
-## Control Flow
+## Working Principle
+- Control commands are sent from a **mobile application** via Bluetooth.
+- The Bluetooth module communicates with Arduino using **serial communication (9600 baud rate)**.
+- Arduino reads incoming character commands and interprets them.
+- Based on the received command, Arduino controls the motor driver pins to move the car in the desired direction.
+
+---
+
+## System Flow
 Mobile App → Bluetooth Module → Arduino → Motor Driver → DC Motors
+
+---
+
+## 🎮 Control Commands
+
+| Command | Action |
+|--------|--------|
+| `F` | Move Forward |
+| `B` | Move Backward |
+| `L` | Turn Left |
+| `R` | Turn Right |
+| `S` | Stop |
+| `I` | Forward Right |
+| `G` | Forward Left |
+| `J` | Backward Right |
+| `H` | Backward Left |
+
 ---
 
 ## Software & Communication
-- Arduino IDE used for programming
-- Serial communication between Arduino and Bluetooth module
-- Command-based motor control logic
+- Programmed using **Arduino IDE**
+- Serial communication at **9600 baud rate**
+- Character-based command decoding
+- Directional motor control using digital outputs
+
+---
+
+## How to Operate
+1. Assemble the circuit and connect motors and Bluetooth module.
+2. Upload the Arduino code to the board.
+3. Pair the mobile phone with the Bluetooth module.
+4. Open a Bluetooth control app.
+5. Send control commands (`F`, `B`, `L`, `R`, etc.).
+6. The robotic car moves according to the received command.
 
 ---
 
 ## Learning Outcomes
-- Understanding of Bluetooth-based wireless communication
+- Understanding serial communication in embedded systems
 - Interfacing Bluetooth modules with Arduino
-- Motor control using driver circuits
-- Embedded system programming basics
+- Direction control of DC motors using motor drivers
+- Real-time wireless control of robotic systems
+
+---
+
+## Limitations
+- No speed control (PWM not implemented)
+- Communication range limited by Bluetooth
+- No obstacle detection
 
 ---
 
 ## Future Enhancements
-- Speed control using PWM
-- Obstacle detection using ultrasonic sensors
-- Voice control integration
-- Android app customization
+- Add PWM-based speed control
+- Implement obstacle avoidance using sensors
+- Develop a custom Android application
+- Integrate voice control
 
 ---
 
@@ -55,4 +102,3 @@ Mobile App → Bluetooth Module → Arduino → Motor Driver → DC Motors
 **Kriti Soni**  
 B.E. Electronics & Communication Engineering  
 MBM University, Jodhpur
-
