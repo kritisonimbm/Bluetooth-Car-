@@ -25,7 +25,7 @@ To design and implement a **Bluetooth-controlled robotic car** using an **Arduin
 ---
 
 ## Control Flow
--Mobile App → Bluetooth Module → Arduino → Motor Driver → DC Motors
+Mobile App → Bluetooth Module → Arduino → Motor Driver → DC Motors
 ---
 
 ## Software & Communication
